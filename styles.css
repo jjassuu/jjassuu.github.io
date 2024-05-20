@@ -1,0 +1,219 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e2e2e2aa ;
+}
+
+header {
+    background-color: #FEDDF8;
+    color: black;
+    padding: 20px;
+    text-align: center;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-titulo {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 100px; /* Ajustado para ocupar más espacio */
+    height: auto;
+    margin-right: 10px;
+}
+
+.vertical-line {
+    margin-right: 30px;
+    margin-left: 30px; /* Reducido el margen izquierdo para acercar la línea al texto */
+    border: none;
+    border-left: 1px solid black;
+    height: 50px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Permite que la sección del menú crezca si hay espacio */
+}
+
+.search-container {
+    margin-left: auto;
+}
+
+.search-bar {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-button {
+    padding: 8px 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #555;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: black !important; /* Asegura que el color sea negro */
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    font-weight: bolder; /* Texto en negrita */
+    padding-left: 10px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: transparent;
+    color: black !important; /* Mantiene el color negro al hacer hover */
+}
+
+.auth-links {
+    margin-top: 10px; /* Espacio entre la barra de búsqueda y los enlaces */
+}
+
+.auth-links a {
+    margin-right: 20px; /* Espacio entre los enlaces */
+    color: black; /* Color del texto */
+    text-decoration: none; /* Quitar subrayado de los enlaces */
+    font-size: smaller;
+    font-weight: lighter;
+}
+
+.auth-links a:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+.auth-button {
+    padding: 8px 16px;
+    color: black;
+    background-color: transparent;
+    font-weight: bolder;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 40px; /* Separación entre los botones */
+}
+
+.auth-button:hover {
+    background-color: #555;
+}
+
+.contenido {
+    width: 90%;
+    margin: 30px auto 30px;
+}
+
+.contenido .parteizqda {
+    width: 70%; /* Ajustado para dar más espacio a la parte izquierda */
+    float: left;
+}
+
+.contenido .partedcha {
+    width: 30%; /* Ajustado para que se vea alineado correctamente */
+    float: left; /* Se asegura de que esté a la derecha */
+    height: 300px;
+}
+
+.contenido .parteizqda .post {
+    width: 90%;
+    margin: 10px auto;
+    border-radius: 5px;
+    height: 270px;
+    background: white;
+}
+.contenido .parteizqda .titulopost{
+    margin: 20px;
+}
+
+.contenido .parteizqda .post .imagenflores {
+    width: 30%; /* Ajusta el tamaño de la imagen al 30% del contenedor del post */
+    height: 100%; /* Mantén la proporción de la imagen */
+    margin-right: 10px; /* Añade un margen derecho para separar la imagen del texto */
+    float: left;
+}
+
+
+.contenido .parteizqda .post .vistaprevia {
+    width: 60%; /* El resto del espacio para el texto */
+    padding: 10px;
+    float: right;
+}
+
+.contenido .partedcha .Recomendados {
+    margin: 20px;
+}
+
+.contenido .partedcha .boton{
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.redirect-button {
+    padding: 15px 30px; /* Aumentado para hacer el botón más grande */
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 40px; /* Aumentado el margen superior para mover el botón más abajo */
+    font-size: 18px; /* Texto más grande */
+}
+
+.redirect-button:hover {
+    background-color: #555;
+}
+.post p {
+    font-style: italic; /* Opcional: estilo cursiva para los versos */
+    line-height: 1.5; /* Espaciado entre líneas */
+    white-space: pre-line; /* Mantener los saltos de línea */
+}
