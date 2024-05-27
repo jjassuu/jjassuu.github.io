@@ -8,10 +8,12 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    flex-direction: row;
+    box-sizing: border-box; /* Asegura que el padding y el border no causen desbordamiento */
 }
 
 p {
-    color: #838DAF;
+    color: black;
     width: 80%;
     margin: 5px auto;
     display: block;
@@ -26,32 +28,31 @@ h1 {
     margin-top: 30px;
     display: block;
 }
+
 .izqda, .dchaconten {
     width: 50%;
     padding: 20px;
     background-color: #FEDDF8;
-}
-.izqda{
-    width: 50%;
-    height: 100vh;
-    float: left;
-    align-content: center;
-    display: block;
-}
-.izqdaimg{
-    margin: auto;
-    display: block;
-    width: 40%;
+    box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
 }
 
-/* Estilos para el contenedor del formulario en la derecha */
-.dchaconten {
-    width: 50%;
+.izqda {
     height: 100vh;
-    float: right;
     display: flex;
-    justify-content: center; /* Centra horizontalmente los elementos */
-    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: center;
+    align-items: center;
+}
+
+.izqdaimg {
+    width: 60%; /* Ajuste del tamaño de la imagen */
+    max-width: 300px;
+}
+
+.dchaconten {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Estilos para el formulario */
@@ -64,8 +65,7 @@ form {
     max-width: 300px;
     width: 100%;
     padding: 20px;
-    margin-top: auto; /* Centra verticalmente el formulario */
-    margin-bottom: auto; /* Centra verticalmente el formulario */
+    box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
 }
 
 span {
@@ -73,7 +73,7 @@ span {
     width: 80%;
     margin: auto;
     font-size: 10px;
-    display: block
+    display: block;
 }
 
 .formElement {
@@ -90,7 +90,7 @@ span {
 .inputcontenedor {
     margin: 1em auto;
     height: 70px;
-    display: block
+    display: block;
 }
 
 .valid {
@@ -109,7 +109,7 @@ span {
     height: 40px;
     margin: 15px auto;
     background-color: darkseagreen;
-    border: 2px#292b2b solid;
+    border: 2px #292b2b solid;
     border-radius: 5px;
     font-size: 11px;
     font-weight: 500;
@@ -118,4 +118,82 @@ span {
 
 .borderColor {
     background-color: mediumseagreen !important;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    body {
+        flex-direction: column;
+        height: auto; /* Ajusta la altura para dispositivos más pequeños */
+    }
+
+    .izqda, .dchaconten {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .izqda {
+        order: 2;
+    }
+
+    .dchaconten {
+        order: 1;
+    }
+
+    .izqdaimg {
+        width: 80%;
+        max-width: 200px;
+    }
+
+    form {
+        max-width: 90%;
+        font-size: 12px; /* Ajusta el tamaño de la fuente para mejor legibilidad en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 768px) {
+    form {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        flex-direction: column; /* Asegura que los contenedores se apilen verticalmente */
+    }
+
+    .izqda, .dchaconten {
+        width: 100%;
+        padding: 10px;
+        height: auto; /* Ajusta la altura para dispositivos más pequeños */
+    }
+
+    .izqda {
+        order: 2; /* Coloca la imagen debajo del formulario en dispositivos pequeños */
+    }
+
+    .dchaconten {
+        order: 1; /* Coloca el formulario encima de la imagen en dispositivos pequeños */
+    }
+
+    .izqdaimg {
+        width: 80%;
+        max-width: 150px;
+        margin-top: 20px; /* Añade un margen superior para separar la imagen del formulario */
+    }
+
+    form {
+        max-width: 100%;
+        padding: 15px; /* Reduce el padding para dispositivos muy pequeños */
+        font-size: 14px; /* Ajusta el tamaño de la fuente para mejor legibilidad en pantallas pequeñas */
+    }
+
+    .formElement {
+        width: 100%; /* Asegura que los elementos del formulario ocupen todo el ancho */
+    }
+
+    #button {
+        width: 100%;
+    }
 }

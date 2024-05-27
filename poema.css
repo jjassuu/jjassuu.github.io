@@ -1,8 +1,9 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     margin: 0;
     padding: 0;
-    background-color: #e2e2e2aa;
+    height: 100%;
+    background-color: #f6f6f6;
 }
 
 header {
@@ -10,6 +11,8 @@ header {
     color: black;
     padding: 20px;
     text-align: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .clearfix::after {
@@ -21,11 +24,14 @@ header {
 .header-container {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 .logo-titulo {
     display: flex;
     align-items: center;
+    flex: 1;
 }
 
 .logo {
@@ -34,28 +40,36 @@ header {
     margin-right: 10px;
 }
 
-.vertical-line {
-    margin-right: 30px;
-    margin-left: 30px;
-    border: none;
-    border-left: 1px solid black;
-    height: 50px;
-}
-
 .menu {
     display: flex;
     align-items: center;
     flex-grow: 1;
+    flex-wrap: nowrap;
+}
+
+.menulink {
+    color: black;
+    font-weight: bolder;
+    font-size: 16px;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.menulink:hover {
+    text-decoration: underline;
 }
 
 .search-container {
     margin-left: auto;
+    display: flex;
+    align-items: center;
 }
 
 .search-bar {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    margin-right: 10px;
 }
 
 .search-button {
@@ -115,41 +129,29 @@ header {
     color: black !important;
 }
 
-.auth-links {
-    margin-top: 10px;
+.linksisr {
+    display: flex;
+    align-items: center;
 }
 
-.auth-links a {
-    margin-right: 20px;
+.linksisr a {
+    margin-left: 20px;
     color: black;
     text-decoration: none;
     font-size: smaller;
     font-weight: lighter;
 }
 
-.auth-links a:hover {
+.linksisr a:hover {
     text-decoration: underline;
-}
-
-.auth-button {
-    padding: 8px 16px;
-    color: black;
-    background-color: transparent;
-    font-weight: bolder;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 40px;
-}
-
-.auth-button:hover {
-    background-color: #555;
 }
 
 .contenido {
     width: 90%;
     margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
 }
 
 .contenido .parteizqda {
@@ -167,26 +169,29 @@ header {
     width: 90%;
     margin: 10px auto;
     border-radius: 5px;
+    height: auto;
     background: white;
-    padding: 20px; /* Añadido padding para el contenido */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Añadida sombra */
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
 }
 
 .contenido .parteizqda .titulopost {
-    text-align: center;
-    margin-bottom: 20px;
+    margin: 20px;
 }
 
-.contenido .parteizqda .vistaprevia {
+.contenido .parteizqda .post .vistaprevia {
     text-align: center;
-    white-space: pre-line; /* Mantiene los saltos de línea del poema */
+    white-space: pre-line;
+    width: 100%;
+    padding: 0 20px;
 }
 
 .contenido .partedcha .boton {
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100%;
 }
 
 .redirect-button {
@@ -201,4 +206,178 @@ header {
 
 .redirect-button:hover {
     background-color: #555;
+}
+
+.piepagina {
+    background: darkseagreen;
+    color: #000;
+    padding: 25px 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.piepagina .contenidofinal {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.piepagina .contactored, .piepagina .contactoformulario {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.piepagina .contactoformulario {
+    display: flex;
+    flex-direction: column;
+    order: 2;
+    margin-top: 20px;
+}
+
+.piepagina .contactoformulario form {
+    display: flex;
+    flex-direction: column;
+}
+
+.piepagina .contactoformulario input, 
+.piepagina .contactoformulario textarea, 
+.piepagina .contactoformulario button {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.piepagina .contactoformulario button {
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.piepagina .contactoformulario button:hover {
+    background-color: #555;
+}
+
+.piepagina .partefinal {
+    background-color: rgb(148, 187, 148);
+    color: #555;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .contenido .parteizqda, .contenido .partedcha {
+        width: 100%;
+        float: none;
+    }
+
+    .contenido .partedcha {
+        margin-top: 20px;
+        height: auto;
+    }
+
+    .contenido .parteizqda .post {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .logo-titulo {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .vertical-line {
+        display: none;
+    }
+
+    .menu {
+        justify-content: center;
+        flex-grow: 0;
+    }
+
+    .menulink {
+        margin: 0 10px;
+    }
+
+    .search-container {
+        justify-content: center;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .search-bar, .search-button {
+        width: calc(100% - 20px); /* Ajusta el ancho para no causar desbordamiento */
+        margin: 5px 10px;
+    }
+
+    .linksisr {
+        justify-content: center;
+        width: 100%;
+        display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-titulo {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .vertical-line {
+        display: none;
+    }
+
+    .menu {
+        justify-content: center;
+        flex-grow: 0;
+    }
+
+    .menulink {
+        margin: 0 10px;
+    }
+
+    .search-container {
+        justify-content: center;
+        margin-top: 10px;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .search-bar, .search-button {
+        width: calc(100% - 20px); /* Ajusta el ancho para no causar desbordamiento */
+        margin: 5px 10px;
+    }
+
+    .linksisr {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .linksisr a {
+        margin: 5px 0;
+    }
 }

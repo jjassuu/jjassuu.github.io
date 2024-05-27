@@ -146,72 +146,32 @@ header {
     text-decoration: underline;
 }
 
-.contenido {
+.form-container {
     width: 90%;
+    max-width: 800px;
     margin: 30px auto;
-    display: flex;
-    flex-wrap: wrap;
-    box-sizing: border-box;
-}
-
-.contenido .parteizqda {
-    width: 70%;
-    float: left;
-}
-
-.contenido .partedcha {
-    width: 30%;
-    float: left;
-    height: 300px;
-}
-
-.contenido .parteizqda .post {
-    width: 90%;
-    margin: 10px auto;
-    border-radius: 5px;
-    height: auto;
+    padding: 20px;
     background: white;
-    display: flex;
-    flex-wrap: wrap;
-    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
 }
 
-.contenido .parteizqda .titulopost {
-    margin: 20px;
+.form-container h2 {
+    margin-bottom: 20px;
 }
 
-.contenido .parteizqda .post .imagenflores {
-    width: 31%;
-    height: auto;
-    margin-right: 10px;
+.text-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
 }
 
-.contenido .parteizqda .post .vistaprevia {
-    width: 60%;
-    padding: 0 10px;
-    align-items: center;
-    text-align: center;
-}
-
-.contenido .parteizqda .post .titulopost a, 
-.contenido .parteizqda .post p {
-    color: black;
-    text-decoration: none;
-    text-align: center;
-}
-
-.contenido .parteizqda .post .titulopost a:hover {
-    text-decoration: underline;
-}
-
-.contenido .partedcha .boton {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    height: 100%;
-}
-
-.redirect-button {
+.btnbig {
     padding: 15px 30px;
     background-color: #333;
     color: white;
@@ -221,15 +181,8 @@ header {
     font-size: 18px;
 }
 
-.redirect-button:hover {
+.btnbig:hover {
     background-color: #555;
-}
-
-.post p {
-    font-style: italic;
-    line-height: 1.5;
-    white-space: pre-line;
-    text-align: center;
 }
 
 .piepagina {
@@ -240,8 +193,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
 }
 
 .piepagina .contenidofinal {
@@ -249,19 +201,12 @@ header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
-    flex-wrap: wrap;
+    box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
 }
 
 .piepagina .contactored, .piepagina .contactoformulario {
     flex: 1;
     padding: 0 20px;
-}
-
-.piepagina .contactoformulario {
-    display: flex;
-    flex-direction: column;
-    order: 2;
-    margin-top: 20px;
 }
 
 .piepagina .contactoformulario form {
@@ -276,6 +221,7 @@ header {
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
 }
 
 .piepagina .contactoformulario button {
@@ -295,24 +241,23 @@ header {
     width: 100%;
     text-align: center;
     padding: 10px 0;
+    box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
 }
 
-/* Media Queries para Responsive Design */
-
+/* Responsive Styles */
 @media (max-width: 1024px) {
-    .contenido {
+    .contenidofinal {
         flex-direction: column;
         align-items: center;
     }
 
-    .contenido .parteizqda, .contenido .partedcha {
+    .contactored, .contactoformulario {
+        padding: 10px;
         width: 100%;
-        float: none;
     }
 
-    .contenido .partedcha {
+    .contactoformulario {
         margin-top: 20px;
-        height: auto;
     }
 }
 
@@ -358,49 +303,7 @@ header {
         width: 100%;
         display: flex;
     }
-
-    .contenido {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .contenido .parteizqda, .contenido .partedcha {
-        width: 100%;
-        float: none;
-    }
-
-    .contenido .parteizqda .post {
-        width: 100%;
-        margin: 10px 0;
-        display: block;
-    }
-
-    .contenido .parteizqda .post .imagenflores {
-        width: 100%;
-        height: auto;
-        margin-right: 0;
-        float: none;
-    }
-
-    .contenido .parteizqda .post .vistaprevia {
-        width: 100%;
-        float: none;
-        padding: 0 10px;
-    }
-
-    .contenido .partedcha {
-        order: -1; /* Mueve la parte derecha arriba */
-        margin-bottom: 20px; /* Añade margen inferior */
-    }
-
-    .contenido .partedcha .boton {
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        height: auto;
-    }
 }
-
 @media (max-width: 480px) {
     .header-container {
         padding: 10px;
@@ -448,45 +351,11 @@ header {
         margin: 5px 0;
     }
 
-    .contenido {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .contenido .parteizqda, .contenido .partedcha {
+    .form-container {
         width: 100%;
-        float: none;
-    }
-
-    .contenido .parteizqda .post {
-        width: 100%;
-        margin: 10px 0;
-        display: block;
-    }
-
-    .contenido .parteizqda .post .imagenflores {
-        width: 100%;
-        height: auto;
-        margin-right: 0;
-        float: none;
-    }
-
-    .contenido .parteizqda .post .vistaprevia {
-        width: 100%;
-        float: none;
-        padding: 0 10px;
-    }
-
-    .contenido .partedcha {
-        order: -1; /* Mueve la parte derecha arriba */
-        margin-bottom: 20px; /* Añade margen inferior */
-    }
-
-    .contenido .partedcha .boton {
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        height: auto;
+        padding: 15px;
+        margin: 0; /* Elimina el margen adicional en dispositivos pequeños */
+        box-sizing: border-box; /* Asegura que el padding no cause desbordamiento */
     }
 
     .piepagina .contenidofinal {
@@ -494,13 +363,8 @@ header {
         align-items: center;
     }
 
-    .piepagina .contactored, .piepagina .contactoformulario {
+    .contactored, .contactoformulario {
         width: 100%;
-        padding: 0;
-    }
-
-    .piepagina .contactoformulario {
-        order: 2; /* Asegura que el formulario esté debajo */
-        margin-top: 20px;
+        padding: 10px;
     }
 }

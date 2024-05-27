@@ -1,6 +1,8 @@
-hr{
+/* Estilos generales */
+hr {
     width: 50%;
 }
+
 body {
     margin: 0;
     padding: 0;
@@ -9,7 +11,7 @@ body {
     color: white;
 }
 
-.seccion1{
+.seccion1 {
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -29,7 +31,7 @@ img {
     right: 20px;
 }
 
-.seccion2{
+.seccion2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,37 +43,38 @@ img {
     padding: 20px;
     background-color: #FEDDF8;
 }
-.sobrenosotrosizqda{
-    width: 50%;
+
+.sobrenosotrosizqda {
     height: 100vh;
-    float: left;
-    align-content: center;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.sobrenosotros{
+
+.sobrenosotros {
     margin: auto;
     display: block;
     width: 40%;
 }
-.iniciosesion{
 
-    width: 50%;
+.iniciosesion {
     height: 100vh;
-    float: right;
-    align-content: center;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.contraseñaolvidada{
+
+.contraseñaolvidada {
     color: white;
     width: 82%;
     height: 40px;
     margin: 15px auto;
     display: block;
     position: relative;
-    text-align: right; /*texto a la derecha */
+    text-align: right; /* texto a la derecha */
 }
 
-.contraseñalink, .registro{
+.contraseñalink, .registro {
     color: darkseagreen;
     cursor: pointer; /* Cambia el cursor al pasar por encima */
 }
@@ -80,45 +83,45 @@ img {
     color: lightgrey; /* Cambia el color del texto al pasar por encima */
 }
 
-
 #button {
     color: white;
     width: 82%;
     height: 40px;
     margin: 15px auto;
     background-color: darkseagreen;
-    border: 2px#292b2b solid;
+    border: 2px #292b2b solid;
     border-radius: 5px;
-    font-size: 11px;
+    font-size: 14px; /* Aumentado el tamaño de fuente */
     font-weight: 500;
     display: block;
 }
+
 h1 {
     color: black;
-    height: 100px;
-    width: 40%;
-    align-content: center;
-    margin: auto;
-    line-height: 10px;
-    margin-top: 30px;
-    display: block;
+    font-size: 24px; /* Aumentado el tamaño de fuente */
+    text-align: center; /* Centrado el texto */
+    margin-bottom: 10px; /* Añadido margen inferior */
 }
 
-h2{
-    color:black;
-    height:20px;
-    width:80%;
-    margin: auto;
-    font-weight: lighter;
-
+h2 {
+    color: black;
+    font-size: 18px; /* Aumentado el tamaño de fuente */
+    text-align: center; /* Centrado el texto */
+    margin-bottom: 20px; /* Añadido margen inferior */
 }
+
 form {
     background-color: white;
-    border: 2px #303030;
-    font-size: 11px;
+    border: 2px solid #303030;
+    font-size: 14px;
     font-weight: 550;
     border-radius: 5px;
+    padding: 20px; /* Añadido padding */
+    width: 80%; /* Ancho del formulario */
+    max-width: 500px; /* Ancho máximo del formulario */
+    margin: auto; /* Centrar el formulario */
 }
+
 p {
     color: dimgrey;
     width: 80%;
@@ -128,21 +131,23 @@ p {
 }
 
 .formElement {
-    width: 80%;
-    height: 32px;
+    width: 90%; /* Aumentado el ancho */
+    height: 40px; /* Aumentada la altura */
     margin: auto;
     border-radius: 3px;
     border: none;
     text-indent: 10px;
     display: block;
+    background-color: #FAFAFA;
 }
 
 .inputContainer {
     margin: 1em auto;
     height: 70px;
-    display: block
+    display: block;
 }
-.final{
+
+.final {
     color: white;
     width: 82%;
     height: 60px;
@@ -152,6 +157,37 @@ p {
     font-weight: 500;
     display: block;
 }
+
 .registro:hover {
     color: lightgrey;
+}
+
+/* Media Queries para dispositivos móviles y tablets */
+@media (max-width: 768px) {
+    .seccion1 {
+        display: none; /* Ocultar la seccion1 en pantallas pequeñas */
+    }
+
+    .seccion2 {
+        flex-direction: column; /* Cambiar la dirección del flex a columna */
+    }
+
+    .sobrenosotrosizqda, .iniciosesion {
+        width: 100%; /* Tomar todo el ancho */
+        height: auto; /* Ajustar altura automáticamente */
+    }
+
+    .iniciosesion {
+        order: -1; /* Mostrar primero la sección de inicio de sesión */
+    }
+
+    form {
+        width: 90%; /* Ancho del formulario */
+        max-width: 100%; /* Ancho máximo del formulario */
+    }
+
+    h1, h2 {
+        font-size: 20px; /* Ajustar tamaño de fuente en pantallas pequeñas */
+        margin-bottom: 15px; /* Ajustar márgenes en pantallas pequeñas */
+    }
 }
